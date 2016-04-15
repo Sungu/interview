@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+gem 'fog'
+gem 'carrierwave'
 gem 'omniauth-facebook'
 gem 'devise'     # 회원가입 및 인증
 gem 'rolify'     # role 관리

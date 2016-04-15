@@ -1,1 +1,34 @@
-<h1>헬로!</h1>
+<div class="container"style="padding-top: 130px;">
+  <h1 style="margin-bottom: 40px;">글작성</h1>
+  <%= form_tag "/post/create",multipart: true, method: "post" do %>
+    <div class="form-group">
+      <label>작성자</label>
+      <input name="writer" type="text" class="form-control" placeholder="작성자">
+    </div>
+    <div class="form-group">
+      <label>사진작가</label>
+      <input name="photo_writer" type="text" class="form-control" placeholder="사진작가">
+    </div>
+    <div class="form-group">
+      <label>인터뷰 대상</label>
+      <input name="interviewee" type="text" class="form-control" placeholder="인터뷰 대상">
+    </div>
+    <div class="form-group">
+      <label>인터뷰 내용</label>
+      <textarea name="content" class="form-control" rows="7"></textarea>
+    </div>
+    <div class="form-group">
+      <label>숏컷 사진</label>
+      <input name="front_img" type="file">
+    </div>
+    <div class="form-group">
+      <label>메인 사진</label>
+      <input name="main_img" type="file">
+    </div>
+    <div class="form-group">
+      <label>워드 클라우드 사진</label>
+      <input name="word_cloud" type="file">
+    </div>
+    <button style="margin-bottom: 30px; margin-top: 20px;" class="btn btn-default">작성하기</button>
+  <% end %>
+</div>
