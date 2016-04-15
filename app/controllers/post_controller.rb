@@ -32,4 +32,18 @@ class PostController < ApplicationController
     end
     
   end
+  
+  def destroy
+    a=Post.find(params[:id])
+    a.destroy
+    flash[:notice] = "글을 지웠습니다"
+    redirect_to '/'
+  end
+  
+  def destroy_lib
+    a=Lib.find_by(post_id: params[:id])
+    a.destroy
+    flash[:notice] = "라이브러리를 지웠습니다"
+    redirect_to :back
+  end
 end

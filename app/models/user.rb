@@ -17,13 +17,6 @@ class User < ActiveRecord::Base
       user.name = auth.info.name   # assuming the user model has a name
       user.image = auth.info.image # assuming the user model has an image
     end
-    
-    logger.info "Aaaaaaa"
-    logger.info user.email
-    logger.info auth.info.inspect
-    logger.info auth.inspect
-    user
-  
     # 이 때는 이상하게도 after_create 콜백이 호출되지 않아서 아래와 같은 조치를 했다.
     
   end

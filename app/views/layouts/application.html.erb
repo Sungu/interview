@@ -54,16 +54,13 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
+                <ul class="nav navbar-nav navbar-right text-center">
                     <% if user_signed_in? %>
                       <li><%= link_to "라이브러리", "/home/show_lib" %></li>
                       <% if User.first.id == current_user.id %>
                         <li><%= link_to "글작성", "/post/new" %></li>
                       <% end %>
-                      <li><%= image_tag(current_user.image, size: '60x60', style:'border-radius:3px;vertical-align:center;') if current_user.image %> </li>
+                      <li style="margin-top:5px"><%= image_tag(current_user.image, size: '50x50', style:'border-radius:3px;') if current_user.image %> </li>
                       <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" } %></li>
                       <!--<li><%= link_to current_user.name %></li> -->
                     <% else %>

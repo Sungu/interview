@@ -1,4 +1,4 @@
-<div class="container"style="padding-top: 130px;">
+<div class="container text-center"style="padding-top: 130px;">
   <div class="row">
     <div>
       <h1 style="margin-bottom: 40px;"><%= @post.interviewee %>님에 대한 인터뷰</h1>
@@ -8,8 +8,10 @@
         <br>
         <p><button class="btn btn-lg btn-success" href="#" role="button">라이브러리 등록</button></p>
       <% end %>
-      
+      <div style="margin-bottom:40px;">
+    </div>
       <div class="panel panel-default">
+        
         <div class="panel-heading">
           <h3 class="panel-title">인터뷰 내용</h3>
         </div>
@@ -19,10 +21,21 @@
       </div>
     </div>
     
-    <div class="col-lg-2" style="position: fixed; top: 300px; right: 0px; background: red;">
-      글 : <%= @post.writer %><br>
-      사진 : <%= @post.photo_writer %><br>
-      작성일 : <%= @post.created_at.year %> / <%= @post.created_at.month %> / <%= @post.created_at.day %><br>
+    <div class="col-lg-2 text-center label" style="position: fixed; top: 250px; left: 0px; background: #2c3e50; color:white;padding-top:20px; padding-bottom:20px">
+      
+      <p>글 : <%= @post.writer %></p>
+      <hr>
+      <p>사진 : <%= @post.photo_writer %></p>
+      <hr>
+      <p>작성일 : <%= @post.created_at.year %> / <%= @post.created_at.month %> / <%= @post.created_at.day %></p>
+      
+    </div>
+    
+    <% if current_user.id == 1 %>
+    <%= link_to '삭제', "/post/destroy/#{@post.id}", class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to '뒤로가기', '/home/index', class: 'btn btn-default' %>
+    <div style="margin-bottom:40px;">
     </div>
   </div>
 </div>

@@ -10,6 +10,8 @@
           <div class="panel-body">
             <a href="/post/index/<%= a.post_id%>"><img src="<%= Post.find(a.post_id).front_img.url %>" class="img-rounded" width="300px" height="300px"></a>
           </div>
+          <%= link_to '삭제', "/post/destroy_lib/#{a.post_id}", class: 'btn btn-default' %>
+          <div style="padding-bottom: 10px"></div>
         </div>
       </div>
     <% end %>
