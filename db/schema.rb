@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(version: 20160414082000) do
   add_index "libs", ["user_id"], name: "index_libs_on_user_id"
 
   create_table "posts", force: :cascade do |t|
+    t.string   "door_img"
     t.string   "front_img"
     t.string   "word_cloud"
     t.string   "main_img"
+    t.string   "door_content"
     t.text     "content"
     t.string   "writer"
     t.string   "photo_writer"

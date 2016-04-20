@@ -13,6 +13,8 @@ class PostController < ApplicationController
                     photo_writer: params[:photo_writer], 
                     interviewee: params[:interviewee],
                     content: params[:content],
+                    door_content: params[:door_content],
+                    door_img: params[:door_img],
                     front_img: params[:front_img],
                     main_img: params[:main_img],
                     word_cloud: params[:word_cloud])

@@ -2,7 +2,7 @@
   <div class="row">
     <div>
       <h1 style="margin-bottom: 40px;"><%= @post.interviewee %>님에 대한 인터뷰</h1>
-      <p><img src="<%= @post.main_img.url %>" width="500px" height="400px" ></p>
+      <p><img src="<%= @post.main_img.url %>" ></p>
       <%= form_tag "/post/add_lib", method: "post" do %>
         <input type="hidden" name="post_id" value="<%= @post.id %>" >
         <br>
@@ -16,7 +16,7 @@
           <h3 class="panel-title">인터뷰 내용</h3>
         </div>
         <div class="panel-body">
-          <%= @post.content %>
+          <%= simple_format(@post.content) %>
         </div>
       </div>
     </div>
@@ -30,9 +30,10 @@
       <p>작성일 : <%= @post.created_at.year %> / <%= @post.created_at.month %> / <%= @post.created_at.day %></p>
       
     </div>
-    
-    <% if current_user.id == 1 %>
-    <%= link_to '삭제', "/post/destroy/#{@post.id}", class: 'btn btn-default' %>
+    <% if user_signed_in? %>
+      <% if current_user.id == 1 %>
+        <%= link_to '삭제', "/post/destroy/#{@post.id}", class: 'btn btn-default' %>
+      <% end %>
     <% end %>
     <%= link_to '뒤로가기', '/home/index', class: 'btn btn-default' %>
     <div style="margin-bottom:40px;">
