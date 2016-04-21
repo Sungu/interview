@@ -30,6 +30,14 @@
       <p style="color:white;">작성일 : <%= @post.created_at.year %> / <%= @post.created_at.month %> / <%= @post.created_at.day %></p>
       
     </div>
+    
+<div class="comments" style="margin-left: auto; margin-right: auto;">
+	
+  <%= render "comments/comments" %>
+
+</div>
+
+</div>
     <% if user_signed_in? %>
       <% if current_user.id == 1 %>
         <%= link_to '삭제', "/post/destroy/#{@post.id}", class: 'btn btn-default' %>

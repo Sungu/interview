@@ -15,7 +15,7 @@
    		</div>
    		<div class="carousel-caption">
    	 		<div class="col-md-12 col-xs-12 text-center">
-   	 			<h3 class="animated2"><%= a.door_content %></h3>
+   	 			<h3 class="animated2"><%= simple_format(a.door_content) %></h3>
    			<div class="line"></div>
    			  <p class="animated3"><%= a.content[0..30]%>...[더보기]</p>
    		  </div>
