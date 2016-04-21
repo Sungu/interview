@@ -7,6 +7,10 @@ class PostController < ApplicationController
     
   def new
   end
+  
+  def edit
+    @post = Post.find(params[:id])
+  end
     
   def create
     a = Post.create(writer: params[:writer], 
@@ -39,7 +43,7 @@ class PostController < ApplicationController
     a=Post.find(params[:id])
     a.destroy
     flash[:notice] = "글을 지웠습니다"
-    redirect_to '/'
+    redirect_to '/home/index'
   end
   
   def destroy_lib
@@ -47,5 +51,21 @@ class PostController < ApplicationController
     a.destroy
     flash[:notice] = "라이브러리를 지웠습니다"
     redirect_to :back
+  end
+
+  def update
+    a = Post.find(params[:id])
+    a.writer = params[:writer]
+    a.photo_writer = params[:photo_writer]
+    a.interviewee = params[:interviewee]
+    a.content = params[:content]
+    a.door_content = params[:door_content]
+    a.door_img = params[:door_img]
+    a.front_img = params[:front_img]
+    a.main_img = params[:main_img]
+    a.word_cloud = params[:word_cloud]
+    a.save
+    flash[:notice] = "글이 수정 되었습니다"
+    redirect_to "/post/index/#{a.id}"
   end
 end

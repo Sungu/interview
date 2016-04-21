@@ -1,0 +1,42 @@
+<div class="container"style="padding-top: 130px;">
+  <h1 style="margin-bottom: 40px;">글 수정</h1>
+  <%= form_tag "/post/update/#{@post.id}",multipart: true, method: "post" do %>
+    <div class="form-group">
+      <label>작성자</label>
+      <input name="writer" type="text" class="form-control" value="<%= @post.writer %>">
+    </div>
+    <div class="form-group">
+      <label>사진작가</label>
+      <input name="photo_writer" type="text" class="form-control" value="<%= @post.photo_writer %>">
+    </div>
+    <div class="form-group">
+      <label>인터뷰 대상</label>
+      <input name="interviewee" type="text" class="form-control" value="<%= @post.interviewee %>">
+    </div>
+    <div class="form-group">
+      <label>대문 내용</label>
+      <textarea name="door_content" class="form-control" rows="3"> <%= @post.door_content %></textarea>
+    </div>
+    <div class="form-group">
+      <label>인터뷰 내용</label>
+      <textarea name="content" class="form-control" rows="7" ><%= @post.content %></textarea>
+    </div>
+    <div class="form-group">
+      <label>대문 사진</label>
+      <input name="door_img" type="file" value="<%= @post.door_img %>">
+    </div>
+    <div class="form-group">
+      <label>숏컷 사진</label>
+      <input name="front_img" type="file" value="<%= @post.front_img %>">
+    </div>
+    <div class="form-group">
+      <label>메인 사진</label>
+      <input name="main_img" type="file" value="<%= @post.main_img %>">
+    </div>
+    <div class="form-group">
+      <label>워드 클라우드 사진</label>
+      <input name="word_cloud" type="file" value="<%= @post.word_cloud %>">
+    </div>
+    <button style="margin-bottom: 30px; margin-top: 20px;" class="btn btn-default">수정하기</button>
+  <% end %>
+</div>

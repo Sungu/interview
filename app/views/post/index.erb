@@ -21,18 +21,19 @@
       </div>
     </div>
     
-    <div class="col-lg-2 text-center label" style="position: fixed; top: 250px; left: 0px; background: #2c3e50; color:white;padding-top:20px; padding-bottom:20px">
+    <div class="col-lg-2 text-center label" style="position: fixed; top: 250px; left: 0px; background: #2c3e50; padding-top:20px; padding-bottom:20px">
       
-      <p>글 : <%= @post.writer %></p>
+      <p style="color:white;">글 : <%= @post.writer %></p>
       <hr>
-      <p>사진 : <%= @post.photo_writer %></p>
+      <p style="color:white;">사진 : <%= @post.photo_writer %></p>
       <hr>
-      <p>작성일 : <%= @post.created_at.year %> / <%= @post.created_at.month %> / <%= @post.created_at.day %></p>
+      <p style="color:white;">작성일 : <%= @post.created_at.year %> / <%= @post.created_at.month %> / <%= @post.created_at.day %></p>
       
     </div>
     <% if user_signed_in? %>
       <% if current_user.id == 1 %>
         <%= link_to '삭제', "/post/destroy/#{@post.id}", class: 'btn btn-default' %>
+        <%= link_to '수정', "/post/edit/#{@post.id}", class: 'btn btn-default' %>
       <% end %>
     <% end %>
     <%= link_to '뒤로가기', '/home/index', class: 'btn btn-default' %>
