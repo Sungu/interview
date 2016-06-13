@@ -2163,27 +2163,27 @@ padding: 8px 15px;
     background: none repeat scroll 0% 0% transparent;
     color: #3C3C3C;
 }
-.blog-catagory{
+.blog-category{
     margin-top: 40px;
 }
-.blog-catagory h4{
+.blog-category h4{
     margin: 20px 0px;
     padding-bottom: 10px;
 }
-.blog-catagory ul li{
+.blog-category ul li{
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px dotted#ccc;
 }
-.blog-catagory ul li a{
+.blog-category ul li a{
     color: #222;
 }
 
-.blog-catagory ul li a i{
+.blog-category ul li a i{
     color: #ccc;
     margin-right: 10px;
 }
-.blog-catagory ul li a span{
+.blog-category ul li a span{
     float: right;
     width: 25px;
     height: 25px;

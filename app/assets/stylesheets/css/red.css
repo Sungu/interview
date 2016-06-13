@@ -324,10 +324,10 @@ textarea:hover {
 .blog-form h4 span{
     color: #EE3B24;
 }
-.blog-catagory ul li a:hover{
+.blog-category ul li a:hover{
     color: #EE3B24;
 }
-.blog-catagory ul li a:hover span{
+.blog-category ul li a:hover span{
     color: #fff;
     background: #EE3B24;
 }
